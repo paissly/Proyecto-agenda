@@ -1,0 +1,15 @@
+.user-cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; 
+  }
+  
+  .app-user-card {
+    flex: 0 0 auto; 
+    margin-right: 10px; 
+    // margin-left: 20px;
+  }
+
+  .user-cards-container app-user-card {
+    margin-right: 20px;
+  }
