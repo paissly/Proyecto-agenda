@@ -1,14 +1,14 @@
-<div class="user-list">
-  <!-- tarjetas de usuarios -->
-  <app-user-card *ngFor="let user of users" [user]="user" (click)="showDetails(user)"></app-user-card>
-</div>
+<div class="container" [ngClass]="{ 'sidebar-open': selectedUser }">
+  <div class="user-cards-container">
+    <app-user-card *ngFor="let user of users" [user]="user" [isSelected]="user === selectedUser" (click)="selectUser(user)" class="app-user-card"></app-user-card>
+  </div>
 
-<div class="user-details">
-  <!-- detalles del usuario seleccionado -->
-  <app-user-details [user]="selectedUser"></app-user-details>
-</div>
-
-<div class="user-details-sidebar-container">
-  <!-- detalles del usuario seleccionado -->
-  <app-user-details-sidebar *ngIf="selectedUser" [selectedUser]="selectedUser"></app-user-details-sidebar>
+  <div class="sidebar-container" *ngIf="selectedUser">
+    <div class="user-details-sidebar">
+      <!-- Detalles del usu seleccionado -->
+      <!-- <div class="close-icon" (click)="hideDetails()">x</div> -->
+      <app-user-details-sidebar [selectedUser]="selectedUser" (hideDetails)="hideDetails()"></app-user-details-sidebar>
+    </div>
+    <!-- <button class="send-messages-button">Send Messages</button> -->
+  </div>
 </div>

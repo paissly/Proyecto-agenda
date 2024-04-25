@@ -7,9 +7,8 @@ import { User } from 'src/app/models/user.model';
   styleUrls: ['./user-card.component.scss']
 })
 export class UserCardComponent {
-  @Input() user: User = {} as User; 
-  @Input() userName: string = ''; // Nombre del usuario
-  @Input() userPosition: string = ''; // Puesto del usuario
+  @Input() user!: User; // Datos del usuario
+  @Input() isSelected: boolean = false; // Indica si la tarjeta está seleccionada
 
   constructor() { }
 }

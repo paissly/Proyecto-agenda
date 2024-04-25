@@ -1,15 +1,55 @@
-.user-cards-container {
+.container {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap; 
+    flex-wrap: wrap; 
+  }
+  
+  .user-cards-container {
+    flex: 1 1 calc(100% - 30%); 
+    display: flex;
+    flex-wrap: wrap; /* tarjetas en filas */
+    justify-content: center;
+  }
+  
+  .sidebar-container {
+    flex: 0 0 30%; /* Sidebar ocupa el 30% */
   }
   
   .app-user-card {
-    flex: 0 0 auto; 
-    margin-right: 10px; 
-    // margin-left: 20px;
+    // flex: 0 0 calc(100% / 6); 
+    // max-width: calc(100% / 6); 
+    // margin: 0; 
+    // border: 2px solid transparent; 
+    // width: 250px;
+    min-width: 250px;
+    max-width: 400px;
+    margin: 0;
+    border: 2px solid transparent;
+  }
+  
+  .user-details-sidebar {
+    width: 100%; 
+  }
+  
+  .close-icon {
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 20px;
+    // cursor: pointer;
+    font-size: 24px;
+    color: #626262; 
+    z-index: 9999;
   }
 
-  .user-cards-container app-user-card {
-    margin-right: 20px;
-  }
+//   .send-messages-button {
+//     background-color: blue;
+//     color: white;
+//     padding: 10px 20px;
+//     border: none;
+//     border-radius: 5px;
+//     margin-top: 20px;
+//     cursor: pointer;
+//   }
+
+//   .send-messages-button:hover {
+//     background-color: darkblue;
+//   }

@@ -11,7 +11,6 @@
     padding: 20px;
     z-index: 1000;
 
-
     h3 {
       text-align: center;
       font-weight: bold;
@@ -50,21 +49,14 @@
 
     .user-details-content {
       text-align: left;
+      margin-bottom: 50px; 
     }
 
-    // .user-photo-container {
-    //     width: 100%;
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    //     margin-bottom: 20px; /* Ajusta según sea necesario */
-    //   }
-      
-      .user-photo {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-      }
+    .user-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
 
     .user-details-header {
       display: flex;
@@ -78,11 +70,31 @@
 
     .close-icon {
       cursor: pointer;
+      position: absolute;
+      top: 30px;
+      right: 30px;
     }
 
     .user-details-body {
       margin-top: 10px;
     }
 
+    .sidebar-button {
+      width: 90%;
+      padding: 10px;
+    //   margin-top: 150px;
+      background-color: rgb(84, 84, 255);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      position: absolute;
+      bottom: -65px; 
+      margin-bottom: 20px;
+    }
+
     transition: transform 0.3s ease-in-out;
+    
+    .send-messages-button:hover {
+        background-color: darkblue;
+           }
 }
