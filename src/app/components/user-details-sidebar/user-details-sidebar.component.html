@@ -1,6 +1,8 @@
 <div class="user-details-sidebar" [hidden]="!selectedUser">
     <div class="user-details-content">
-      <img class="user-photo" [src]="selectedUser?.profileImageUrl" alt="User Photo">
+        <div class="foto">
+            <img class="user-photo" [src]="selectedUser?.profileImageUrl" alt="User Photo">
+          </div>
       <h3>{{ selectedUser?.name }}</h3>
 
       <div class="puesto">
@@ -39,5 +41,5 @@
 </div>
 
 
-<span class="close-icon" (click)="hideDetails.emit()">x</span>
+<img class="close-icon" src="assets/close.png" alt="Close" (click)="hideDetails.emit()">
 </div>

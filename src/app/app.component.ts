@@ -57,8 +57,8 @@ export class AppComponent {
       },
       {
         id: 4,
-        name: 'Lucas Jones',
-        position: 'Manager',
+        name: 'Marcos López',
+        position: 'UX/UI Designer',
         phoneNumber: '234-567-8901',
         email: 'lucasjones@gmail.com',
         instagram: '@lucasjones_',
@@ -205,54 +205,3 @@ export class AppComponent {
     this.selectedUser = user;
   }
 }
-
-
-// import { Component } from '@angular/core';
-// import { User } from './models/user.model';
-
-// @Component({
-//   selector: 'app-root',
-//   templateUrl: './app.component.html',
-//   styleUrls: ['./app.component.scss']
-// })
-// export class AppComponent {
-//   currentUser: User;
-//   user2: User;
-//   user3: User;
-
-//   constructor() {
-//     // Usuarios creados
-//     this.currentUser = {
-//       id: 1,
-//       name: 'Mia Jones',
-//       position: 'Web Developer',
-//       phoneNumber: '123-456-7890',
-//       email: 'miajones@gmail.com',
-//       instagram: '@miajones_',
-//       twitter: '@miajones_',
-//       profileImageUrl: 'assets/fotoperfil.png'
-//     };
-
-//     this.user2 = {
-//       id: 3,
-//       name: 'Alex Johnson',
-//       position: 'Manager',
-//       phoneNumber: '555-123-4567',
-//       email: 'alex.johnson@example.com',
-//       instagram: 'alex_johnson',
-//       twitter: 'alex_johnson',
-//       profileImageUrl: 'assets/fotoperfil3.png'
-//     };
-
-//     this.user3 = {
-//       id: 4,
-//       name: 'Emily Davis',
-//       position: 'Marketing',
-//       phoneNumber: '111-222-3333',
-//       email: 'emily.davis@example.com',
-//       instagram: 'emily_davis',
-//       twitter: 'emily_davis',
-//       profileImageUrl: 'assets/fotoperfil2.png'
-//     };
-//   }
-// }

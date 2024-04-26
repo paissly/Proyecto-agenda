@@ -5,10 +5,8 @@
 
   <div class="sidebar-container" *ngIf="selectedUser">
     <div class="user-details-sidebar">
-      <!-- Detalles del usu seleccionado -->
-      <!-- <div class="close-icon" (click)="hideDetails()">x</div> -->
+      
       <app-user-details-sidebar [selectedUser]="selectedUser" (hideDetails)="hideDetails()"></app-user-details-sidebar>
     </div>
-    <!-- <button class="send-messages-button">Send Messages</button> -->
   </div>
 </div>
