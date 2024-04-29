@@ -1,11 +1,17 @@
 <div class="container" [ngClass]="{ 'sidebar-open': selectedUser }">
+  <!-- Barra de búsqueda -->
+  <div class="search-bar">
+    <input type="text" placeholder="Buscar contacto..." [(ngModel)]="searchQuery" (input)="searchContacts()">
+  </div>
+
+  <!-- Lista de tarjetas de usuario -->
   <div class="user-cards-container">
     <app-user-card *ngFor="let user of users" [user]="user" [isSelected]="user === selectedUser" (click)="selectUser(user)" class="app-user-card"></app-user-card>
   </div>
 
+  <!-- Detalles del usuario seleccionado -->
   <div class="sidebar-container" *ngIf="selectedUser">
     <div class="user-details-sidebar">
-      
       <app-user-details-sidebar [selectedUser]="selectedUser" (hideDetails)="hideDetails()"></app-user-details-sidebar>
     </div>
   </div>
