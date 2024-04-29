@@ -1,0 +1,45 @@
+<div class="user-details-sidebar" [hidden]="!selectedUser">
+    <div class="user-details-content">
+        <div class="foto">
+            <img class="user-photo" [src]="selectedUser?.profileImageUrl" alt="User Photo">
+          </div>
+      <h3>{{ selectedUser?.name }}</h3>
+
+      <div class="puesto">
+        <p>{{ selectedUser?.position }}</p>
+      </div>
+      <div class="info-section">
+        <h4>EMAIL</h4>
+        <p>{{ selectedUser?.email }}</p>
+      </div>
+      <div class="info-section">
+        <h4>MOBILE</h4>
+        <p>{{ selectedUser?.phoneNumber }}</p>
+      </div>
+      <div class="info-section">
+        <h4>EMPLOYEE LEVEL</h4>
+        <p>{{ selectedUser?.nivel }}</p>
+      </div>
+      <div class="info-section">
+        <h4>SALARY THIS MONTH</h4>
+        <p>{{ selectedUser?.salario }}</p>
+      </div>
+      <div class="bio-section">
+        <h4>BIO</h4>
+        <p>{{ selectedUser?.biografia }}</p>
+      </div>
+      <div class="social-media-section">
+        <h4>SOCIAL MEDIA</h4>
+        <div class="social-icons">
+          <img src="assets/facebook.png" alt="Facebook">
+          <img src="assets/twitter.png" alt="Twitter">
+          <img src="assets/instagram.png" alt="Instagram">
+        </div>
+      </div>
+    
+    <button class="sidebar-button">Send Messages</button>
+</div>
+
+
+<img class="close-icon" src="assets/close.png" alt="Close" (click)="hideDetails.emit()">
+</div>

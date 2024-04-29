@@ -1,0 +1,17 @@
+<div class="user-card" [class.selected]="isSelected">
+    <div class="user-details">
+      <div class="user-image">
+        <img [src]="user.profileImageUrl" alt="User Image">
+      </div>
+      <div class="user-name">
+        <span class="name">{{ user.name }}</span><br>
+        <span class="position">{{ user.position }}</span>
+      </div>
+      <div class="social-icons">
+        <img src="assets/instagram.png" alt="Instagram">
+        <img src="assets/twitter.png" alt="Twitter">
+        <img src="assets/facebook.png" alt="Facebook">
+      </div>
+    </div>
+  </div>
+  
