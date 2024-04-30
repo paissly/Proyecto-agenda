@@ -7,6 +7,7 @@ import { UserCardComponent } from './components/user-card/user-card.component';
 // import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserDetailsSidebarComponent } from './components/user-details-sidebar/user-details-sidebar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UserDetailsSidebarComponent } from './components/user-details-sidebar/u
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
