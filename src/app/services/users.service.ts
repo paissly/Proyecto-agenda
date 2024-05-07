@@ -186,4 +186,9 @@ export class UsersService {
       }
     ];
   }
+
+  addUser(newUser: User): Observable<User[]> {
+    this._users.push(newUser);
+    return of(this._users);
+  }
 }
