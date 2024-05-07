@@ -1,5 +1,7 @@
+// inicio.component.ts
+
 import { Component } from '@angular/core';
-import { User } from 'src/app/models/user.model'; 
+import { User } from 'src/app/models/user.model';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({

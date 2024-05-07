@@ -11,4 +11,5 @@ export interface User{
     nivel: string;
     biografia: string;
     salario: number;
+    fotoUrl: string;
 }

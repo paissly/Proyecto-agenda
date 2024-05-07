@@ -27,7 +27,8 @@ export class UsersService {
         foto: 'assets/fotoperfil.png',
         nivel: 'junior',
         biografia: 'Me encanta mi trabajo, desde que empecé a estudiar..........',
-        salario: 1300
+        salario: 1300,
+        fotoUrl: 'assets/fotoperfil.png'
       },
       {
         id: 2,
@@ -41,7 +42,8 @@ export class UsersService {
         foto: 'assets/fotoperfil.png',
         nivel: 'junior',
         biografia: 'Me encanta mi trabajo, desde que empecé a estudiar..........',
-        salario: 1300
+        salario: 1300,
+        fotoUrl: 'assets/fotoperfil3.png'
       },
       {
         id: 3,
@@ -55,7 +57,8 @@ export class UsersService {
         foto: 'assets/fotoperfil.png',
         nivel: 'junior',
         biografia: 'Me encanta mi trabajo, desde que empecé a estudiar..........',
-        salario: 1300
+        salario: 1300,
+        fotoUrl: 'assets/fotoperfil2.png'
       },
       {
         id: 4,
@@ -69,7 +72,8 @@ export class UsersService {
         foto: 'assets/fotoperfil2.png',
         nivel: 'senior',
         biografia: 'Apasionado por liderar equipos y alcanzar metas desafiantes.',
-        salario: 2000
+        salario: 2000,
+        fotoUrl: 'assets/fotoperfil7.png'
       },
       {
         id: 5,
@@ -83,7 +87,8 @@ export class UsersService {
         foto: 'assets/fotoperfil3.png',
         nivel: 'intermedio',
         biografia: 'Amante del diseño creativo y las soluciones visuales impactantes.',
-        salario: 1500
+        salario: 1500,
+        fotoUrl: 'assets/fotoperfil4.png'
       },
       {
         id: 6,
@@ -97,7 +102,8 @@ export class UsersService {
         foto: 'assets/fotoperfil4.png',
         nivel: 'avanzado',
         biografia: 'Experto en estrategias de marketing digital y crecimiento de marca.',
-        salario: 1800
+        salario: 1800,
+        fotoUrl: 'assets/fotoperfil6.png'
       },
       {
         id: 7,
@@ -111,7 +117,8 @@ export class UsersService {
         foto: 'assets/fotoperfil5.png',
         nivel: 'intermedio',
         biografia: 'Comprometida con brindar el mejor servicio al cliente y resolver problemas.',
-        salario: 1600
+        salario: 1600,
+        fotoUrl: 'assets/fotoperfil5.png'
       },
       {
         id: 8,
@@ -125,7 +132,8 @@ export class UsersService {
         foto: 'assets/fotoperfil8.png',
         nivel: 'senior',
         biografia: 'Experimentado en liderazgo de equipos de ventas y estrategias comerciales.',
-        salario: 2200
+        salario: 2200,
+        fotoUrl: 'assets/fotoperfil9.png'
       },
 
       {
@@ -140,7 +148,8 @@ export class UsersService {
         foto: 'assets/fotoperfil9.png',
         nivel: 'avanzado',
         biografia: 'Apasionada por el diseño gráfico y la creatividad en todas sus formas.',
-        salario: 1800
+        salario: 1800,
+        fotoUrl: 'assets/fotoperfil8.png'
       },
       {
         id: 10,
@@ -154,7 +163,8 @@ export class UsersService {
         foto: 'assets/fotoperfil10.png',
         nivel: 'senior',
         biografia: 'Experto en desarrollo de software y tecnologías de vanguardia.',
-        salario: 2200
+        salario: 2200,
+        fotoUrl: 'assets/10fotoperfil.png'
       },
       {
         id: 11,
@@ -168,7 +178,8 @@ export class UsersService {
         foto: 'assets/fotoperfil11.png',
         nivel: 'senior',
         biografia: 'Líder en estrategias de marketing y comunicación para empresas de todo tamaño.',
-        salario: 2300
+        salario: 2300,
+        fotoUrl: 'assets/fotoperfil11.png'
       },
       {
         id: 12,
@@ -182,7 +193,8 @@ export class UsersService {
         foto: 'assets/fotoperfil12.png',
         nivel: 'intermedio',
         biografia: 'Apasionado por la creación de experiencias de usuario atractivas y funcionales.',
-        salario: 1600
+        salario: 1600,
+        fotoUrl: 'assets/fotoperfil12.png'
       }
     ];
   }

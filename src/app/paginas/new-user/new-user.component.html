@@ -1,19 +1,43 @@
-<h2>Añadir Nuevo Contacto</h2>
-
-<form (submit)="addUser()">
-  <div>
-    <label for="name">Nombre:</label>
-    <input type="text" id="name" name="name" [(ngModel)]="newUser.name" required>
-  </div>
-  <div>
-    <label for="phoneNumber">Número de Teléfono:</label>
-    <input type="tel" id="phoneNumber" name="phoneNumber" [(ngModel)]="newUser.phoneNumber" required>
-  </div>
-  <div>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" [(ngModel)]="newUser.email" required>
-  </div>
+<div class="form-container">
+    <h2>Añadir Nuevo Contacto</h2>
   
-
-  <button type="submit">Añadir Contacto</button>
-</form>
+    <form (submit)="addUser()">
+      <div>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="newUser.name" required>
+      </div>
+      <div>
+        <label for="phoneNumber">Número de Teléfono:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" [(ngModel)]="newUser.phoneNumber" required>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="newUser.email" required>
+      </div>
+      <div>
+        <label for="photo">Foto de Perfil:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" (change)="handleFileInput($event)" required>
+        <!-- Mostrar la imagen seleccionada por el usuario -->
+        <img *ngIf="newUser.fotoUrl" [src]="newUser.fotoUrl" alt="Foto de Perfil">
+      </div>
+      <div>
+        <label for="level">Nivel del Trabajador:</label>
+        <select id="level" name="level" [(ngModel)]="newUser.nivel" required>
+          <option value="junior">Junior</option>
+          <option value="senior">Senior</option>
+          <option value="expert">Expert</option>
+        </select>
+      </div>
+      <div>
+        <label for="salary">Salario de Este Mes:</label>
+        <input type="number" id="salary" name="salary" [(ngModel)]="newUser.salario" required>
+      </div>
+      <div>
+        <label for="bio">Biografía:</label>
+        <textarea id="bio" name="bio" [(ngModel)]="newUser.biografia" required></textarea>
+      </div>
+  
+      <button type="submit" class="add-button">Añadir Contacto</button>
+      <button routerLink="/inicio" class="back-button">Volver a la Agenda de Contactos</button>
+    </form>
+  </div>
