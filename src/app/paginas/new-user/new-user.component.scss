@@ -1,6 +1,4 @@
-/* new-user.component.scss */
 
-/* Estilo para el contenedor del formulario */
 .form-container {
     max-width: 600px;
     margin: auto;
@@ -10,14 +8,12 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  /* Estilo para el título del formulario */
   .form-container h2 {
     margin-bottom: 20px;
     font-size: 24px;
     color: #333;
   }
   
-  /* Estilo para las etiquetas del formulario */
   .form-container label {
     display: block;
     margin-bottom: 10px;
@@ -25,12 +21,11 @@
     color: #555;
   }
   
-  /* Estilo para los campos de entrada de texto */
   .form-container input[type="text"],
   .form-container input[type="tel"],
   .form-container input[type="email"],
   .form-container textarea {
-    width: calc(100% - 22px); /* Ancho del 100% menos el espacio del padding */
+    width: calc(100% - 22px); 
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -38,9 +33,9 @@
     font-size: 16px;
   }
   
-  /* Estilo para el campo select */
+  
   .form-container select {
-    width: calc(100% - 22px); /* Ancho del 100% menos el espacio del padding */
+    width: calc(100% - 22px); 
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -48,35 +43,35 @@
     font-size: 16px;
   }
   
-  /* Estilo para el campo de texto de área */
+ 
   .form-container textarea {
-    width: calc(100% - 22px); /* Ancho del 100% menos el espacio del padding */
+    width: calc(100% - 22px); 
     height: 100px;
   }
   
-  /* Estilo para los botones */
+  
   .form-container button {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px; /* Espacio entre los botones */
+    margin-bottom: 10px; 
     border: none;
     border-radius: 5px;
     cursor: pointer;
   }
   
-  /* Estilo específico para el botón de 'Añadir Contacto' */
+  
   .form-container .add-button {
-    background-color: #007bff; /* Color azul */
-    color: #fff; /* Texto blanco */
+    background-color: #007bff;
+    color: #fff; 
   }
   
-  /* Estilo específico para el botón de 'Volver' */
+  
   .form-container .back-button {
-    background-color: #28a745; /* Color verde */
-    color: #fff; /* Texto blanco */
+    background-color: #28a745; 
+    color: #fff; 
   }
   
-  /* Estilos de hover para los botones */
+  
   .form-container button:hover {
-    opacity: 0.8; /* Reducir la opacidad al pasar el ratón */
+    opacity: 0.8; 
   }

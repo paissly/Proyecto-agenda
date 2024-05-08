@@ -68,20 +68,15 @@ body{
   .user-cards-container {
     flex: 1 1 calc(100% - 30%); 
     display: flex;
-    flex-wrap: wrap; /* tarjetas en filas */
+    flex-wrap: wrap; 
     justify-content: center;
   }
   
   .sidebar-container {
-    flex: 0 0 30%; /* Sidebar ocupa el 30% */
+    flex: 0 0 30%;
   }
   
   .app-user-card {
-    // flex: 0 0 calc(100% / 6); 
-    // max-width: calc(100% / 6); 
-    // margin: 0; 
-    // border: 2px solid transparent; 
-    // width: 250px;
     min-width: 250px;
     max-width: 400px;
     margin: 0;

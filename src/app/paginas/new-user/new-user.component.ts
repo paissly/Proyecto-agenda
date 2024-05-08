@@ -16,26 +16,20 @@ export class NewUserComponent {
   constructor(private router: Router, private userService: UsersService) {}
 
   addUser() {
-    // Upload photo if selected
     if (this.fileToUpload !== null) {
       this.uploadPhoto();
     }
 
-    // Add new user
     this.userService.addUser(this.newUser);
 
-    // Reset form
     this.resetForm();
 
-    // Navigate back to contact list page
     this.goBack();
   }
 
   uploadPhoto() {
-    // Simulating photo upload
-    // Replace this with actual photo upload logic
-    const photoUrl = this.fileToUploadUrl; // Assigning the uploaded photo URL
-    this.newUser.fotoUrl = photoUrl as string; // Assigning the photo URL to newUser.fotoUrl
+    const photoUrl = this.fileToUploadUrl;
+    this.newUser.fotoUrl = photoUrl as string;
   }
 
   handleFileInput(event: any) {
