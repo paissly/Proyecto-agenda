@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
 import { UsersService } from 'src/app/services/users.service';
 
@@ -12,7 +13,7 @@ export class NewUserComponent {
   fileToUpload: File | null = null;
   fileToUploadUrl: string | ArrayBuffer | null = null;
 
-  constructor(private userService: UsersService) {}
+  constructor(private router: Router, private userService: UsersService) {}
 
   addUser() {
     // Upload photo if selected
@@ -25,6 +26,9 @@ export class NewUserComponent {
 
     // Reset form
     this.resetForm();
+
+    // Navigate back to contact list page
+    this.goBack();
   }
 
   uploadPhoto() {
@@ -49,10 +53,11 @@ export class NewUserComponent {
   resetForm() {
     this.newUser = { id: 0, name: '', phoneNumber: '', email: '', foto: '', nivel: 'junior', biografia: '', salario: 0, fotoUrl: ''};
     this.fileToUpload = null;
-    this.fileToUploadUrl = null; // Reset file URL as well
+    this.fileToUploadUrl = null; 
   }
 
   goBack() {
-    // Code to navigate back to contact list page goes here
+    
+    this.router.navigate(['/paginas/inicio']);
   }
 }

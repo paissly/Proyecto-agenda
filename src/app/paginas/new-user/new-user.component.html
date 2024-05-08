@@ -17,7 +17,7 @@
       <div>
         <label for="photo">Foto de Perfil:</label>
         <input type="file" id="photo" name="photo" accept="image/*" (change)="handleFileInput($event)" required>
-        <!-- Mostrar la imagen seleccionada por el usuario -->
+        <!-- Muestra la imagen seleccionada por el usuario -->
         <img *ngIf="newUser.fotoUrl" [src]="newUser.fotoUrl" alt="Foto de Perfil">
       </div>
       <div>
@@ -38,6 +38,7 @@
       </div>
   
       <button type="submit" class="add-button">Añadir Contacto</button>
-      <button routerLink="/inicio" class="back-button">Volver a la Agenda de Contactos</button>
+      <!-- <button type="button" class="back-button" (click)="goBack()">Volver a la Agenda de Contactos</button> -->
+      <button routerLink="/" class="back-button"> Volver a la Agenda de Contactos</button>
     </form>
   </div>
