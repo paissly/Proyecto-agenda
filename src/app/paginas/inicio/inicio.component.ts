@@ -1,22 +1,41 @@
-// inicio.component.ts
-
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { User } from 'src/app/models/user.model';
 import { UsersService } from 'src/app/services/users.service';
+import { UserDeleteService } from 'src/app/services/user-delete.service';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.scss']
 })
-export class InicioComponent {
-  users: User[] = []; // Inicializar la variable users
+export class InicioComponent implements OnInit, OnDestroy {
+  users: User[] = [];
   selectedUser: User | null = null;
   searchQuery: string = '';
+  private subscription: Subscription = new Subscription();
 
-  constructor(private readonly userService: UsersService) {}
+  constructor(
+    private readonly userService: UsersService,
+    private readonly userDeleteService: UserDeleteService
+  ) {}
 
   ngOnInit(): void {
+    this.loadUsers();
+
+    // se suscribe al evento de eliminación de usuario
+    this.subscription = this.userDeleteService.deletedUserId.subscribe(deletedUserId => {
+      if (deletedUserId) {
+        this.removeUser(deletedUserId);
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+  loadUsers(): void {
     this.userService.getUsers().subscribe(users => {
       this.users = users.sort((a, b) => a.name.localeCompare(b.name));
     });
@@ -36,9 +55,7 @@ export class InicioComponent {
 
   searchContacts() {
     if (!this.searchQuery) {
-      this.userService.getUsers().subscribe(users => {
-        this.users = users.sort((a, b) => a.name.localeCompare(b.name));
-      });
+      this.loadUsers();
     } else {
       this.userService.getUsers().subscribe(users => {
         this.users = users.filter(user =>
@@ -48,5 +65,17 @@ export class InicioComponent {
         );
       });
     }
+  }
+
+  removeUser(userId: number): void {
+    this.users = this.users.filter(user => user.id !== userId);
+    // Oculta los detalles si el usuario eliminado estaba seleccionado
+    if (this.selectedUser && this.selectedUser.id === userId) {
+      this.selectedUser = null;
+    }
+  }
+
+  handleUserDeleted(userId: number): void {
+    this.removeUser(userId);
   }
 }

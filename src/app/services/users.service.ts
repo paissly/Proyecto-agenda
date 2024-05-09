@@ -203,4 +203,8 @@ export class UsersService {
     this._users.push(newUser);
     return of(this._users);
   }
+
+  deleteUser(userId: number) {
+    this._users = this._users.filter(user => user.id !== userId);
+  }
 }
