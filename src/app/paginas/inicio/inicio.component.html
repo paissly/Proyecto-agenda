@@ -1,23 +1,22 @@
 <div class="top-menu">
-    <div class="search-bar">
-        <input type="text" placeholder="Buscar contacto..." [(ngModel)]="searchQuery" (input)="searchContacts()">
-    </div>
-    <button routerLink="/new-user" class="new-contact-button">
-        <img src="assets/plus.png" alt="Agregar nuevo contacto"> Nuevo Contacto
-    </button>
-</div>
-  
-  <div class="container" [ngClass]="{ 'sidebar-open': selectedUser }">
-    <!-- Lista de tarjetas de usuario -->
-    <div class="user-cards-container">
-      <app-user-card *ngFor="let user of users" [user]="user" [isSelected]="user === selectedUser" (click)="selectUser(user)" class="app-user-card"></app-user-card>
-    </div>
-  
-    <!-- Detalles del usuario seleccionado -->
-    <div class="sidebar-container" *ngIf="selectedUser">
-      <div class="user-details-sidebar">
-        <app-user-details-sidebar [selectedUser]="selectedUser" (hideDetails)="hideDetails()"></app-user-details-sidebar>
-      </div>
-    </div>
+  <div class="search-bar">
+      <input type="text" placeholder="Buscar contacto..." [(ngModel)]="searchQuery" (input)="searchContacts()">
   </div>
-  
+  <button routerLink="/new-user" class="new-contact-button">
+      <img src="assets/plus.png" alt="Agregar nuevo contacto"> Nuevo Contacto
+  </button>
+</div>
+
+<div class="container" [ngClass]="{ 'sidebar-open': selectedUser }">
+  <!-- Lista de tarjetas de usuario -->
+  <div class="user-cards-container">
+      <app-user-card *ngFor="let user of users" [user]="user" [isSelected]="user === selectedUser" (click)="selectUser(user)" class="app-user-card"></app-user-card>
+  </div>
+
+  <!-- Detalles del usuario seleccionado -->
+  <div class="sidebar-container" *ngIf="selectedUser">
+      <div class="user-details-sidebar">
+          <app-user-details-sidebar [selectedUser]="selectedUser" (hideDetails)="hideDetails()" (deleteUser)="handleUserDeleted(selectedUser.id)"></app-user-details-sidebar>
+      </div>
+  </div>
+</div>
