@@ -1,34 +1,52 @@
 <div class="user-details-sidebar" [hidden]="!selectedUser">
   <div class="user-details-content">
-    <div class="foto">
-      <img class="user-photo" [src]="selectedUser?.fotoUrl" alt="User Photo">
-    </div>
-    <h3>{{ selectedUser?.name }}</h3>
+    <div *ngIf="showForm" class="modify-form-container">
+    <form (submit)="saveChanges()" *ngIf="selectedUser" class="modify-form">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" [(ngModel)]="selectedUser.name" name="name" id="name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" [(ngModel)]="selectedUser.phoneNumber" name="phoneNumber" id="phoneNumber" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" [(ngModel)]="selectedUser.email" name="email" id="email" class="form-control" required>
+      </div>
 
-    <div class="puesto">
-      <p>{{ selectedUser?.position }}</p>
+      <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+  </div>
+    <div class="foto" *ngIf="selectedUser">
+      <img class="user-photo" [src]="selectedUser.fotoUrl" alt="User Photo">
     </div>
-    <div class="info-section">
+    <h3 *ngIf="selectedUser">{{ selectedUser.name }}</h3>
+
+    <div class="puesto" *ngIf="selectedUser">
+      <p>{{ selectedUser.position }}</p>
+    </div>
+    <div class="info-section" *ngIf="selectedUser">
       <h4>EMAIL</h4>
-      <p>{{ selectedUser?.email }}</p>
+      <p>{{ selectedUser.email }}</p>
     </div>
-    <div class="info-section">
+    <div class="info-section" *ngIf="selectedUser">
       <h4>MOBILE</h4>
-      <p>{{ selectedUser?.phoneNumber }}</p>
+      <p>{{ selectedUser.phoneNumber }}</p>
     </div>
-    <div class="info-section">
+    <div class="info-section" *ngIf="selectedUser">
       <h4>EMPLOYEE LEVEL</h4>
-      <p>{{ selectedUser?.nivel }}</p>
+      <p>{{ selectedUser.nivel }}</p>
     </div>
-    <div class="info-section">
+    <div class="info-section" *ngIf="selectedUser">
       <h4>SALARY THIS MONTH</h4>
-      <p>{{ selectedUser?.salario }}</p>
+      <p>{{ selectedUser.salario }}</p>
     </div>
-    <div class="bio-section">
+    <div class="bio-section" *ngIf="selectedUser">
       <h4>BIO</h4>
-      <p>{{ selectedUser?.biografia }}</p>
+      <p>{{ selectedUser.biografia }}</p>
     </div>
-    <div class="social-media-section">
+    <div class="social-media-section" *ngIf="selectedUser">
       <h4>SOCIAL MEDIA</h4>
       <div class="social-icons">
         <img src="assets/facebook.png" alt="Facebook">
@@ -41,6 +59,6 @@
   </div>
 
   <img class="close-icon" src="assets/close.png" alt="Close" (click)="hideDetails.emit()">
-  <button class="delete-button" (click)="deleteUser()">Delete User</button>
-
+  <img src="assets/delete.png" alt="Delete User" class="delete-button" (click)="deleteUser()">
+<img src="assets/edit.png" alt="Modify User" class="modify-button" (click)="toggleForm()">
 </div>

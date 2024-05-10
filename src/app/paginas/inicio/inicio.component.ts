@@ -23,7 +23,6 @@ export class InicioComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.loadUsers();
 
-    // se suscribe al evento de eliminación de usuario
     this.subscription = this.userDeleteService.deletedUserId.subscribe(deletedUserId => {
       if (deletedUserId) {
         this.removeUser(deletedUserId);
@@ -69,7 +68,6 @@ export class InicioComponent implements OnInit, OnDestroy {
 
   removeUser(userId: number): void {
     this.users = this.users.filter(user => user.id !== userId);
-    // Oculta los detalles si el usuario eliminado estaba seleccionado
     if (this.selectedUser && this.selectedUser.id === userId) {
       this.selectedUser = null;
     }

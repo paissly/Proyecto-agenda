@@ -207,4 +207,13 @@ export class UsersService {
   deleteUser(userId: number) {
     this._users = this._users.filter(user => user.id !== userId);
   }
+
+  updateUser(user: User): Observable<User[]> {
+    const index = this._users.findIndex(u => u.id === user.id);
+    if (index !== -1) {
+      this._users[index] = user;
+    }
+    return of(this._users);
+  }
+  
 }
